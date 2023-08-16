@@ -133,7 +133,7 @@ setup.kibana:
   # Scheme and port can be left out and will be set to the default (http and 5601)
   # In case you specify and additional path, the scheme is required: http://localhost:5601/path
   # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
-  host: "192.168.0.2:5601"
+  host: "192.168.68.58:5601"
 
   # Kibana Space ID
   # ID of the Kibana Space into which the dashboards should be loaded. By default,
@@ -160,7 +160,7 @@ setup.kibana:
 # ---------------------------- Elasticsearch Output ----------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["192.168.0.2:9200"]
+  hosts: ["192.168.68.58:9200"]
   output.elasticsearch.index: "winlogbeat-%{[agent.name]}"
   setup.template.name: "winlogbeat"
   setup.template.pattern: "winlogbeat-*"
@@ -169,9 +169,9 @@ output.elasticsearch:
   #protocol: "https"
 
   # Authentication credentials - either API key or username/password.
-  #api_key: "id:api_key"
-  username: "elastic"
-  password: "${KEY}"
+  api_key: "id:api_key"
+  #username: "elastic"
+  #password: "${KEY}"
   template.name: "winlogbeat"
   template.path: "winlogbeat.template.json"
   template.overwrite: false
